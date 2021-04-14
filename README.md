@@ -1,1 +1,1 @@
-Application uses REST API
+Spring application (REST API)
