@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pogoda</title>
+</head>
+<body>
+    <div style="text-align: center;">
+        <th:block th:if="${apiError != null}" th:switch="${apiError.name()}">
+            <span th:case="'NOT_FOUND'">Nie znaleziono miasta</span>
+            <span th:case="'BAD_REQUEST'">Błedne dzialanie</span>
+        </th:block>
+
+        <h1 th:if="${weather != null}" th:text="${weather.getMain().getTemp()}"></h1>
+        <form method="post" action="/">
+            Nazwa miasta: <input name="cityName" type="text"/> <br/>
+            <input type="submit" value="Wyslij">
+        </form>
+    </div>
+</body>
+</html>
