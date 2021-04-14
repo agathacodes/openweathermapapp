@@ -1,0 +1,1 @@
+Application uses REST API
